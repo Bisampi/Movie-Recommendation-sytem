@@ -1,6 +1,6 @@
 
-
- **🎬 Personalized Movie Recommendation System**
+**
+ **🎬 Personalized Movie Recommendation System********
  
 This project implements a scalable and efficient Movie Recommendation System using a Two-Tower Embedding (TTE) architecture inspired by Uber’s ML platform. It encodes user preferences and movie metadata into dense vector embeddings, enabling fast and personalized recommendations through Approximate Nearest Neighbor (ANN) search.
 
