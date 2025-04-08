@@ -1,4 +1,7 @@
-# Movie-Recommendation-sytem
+
+
+ 🎬 Personalized Movie Recommendation System
+This project implements a scalable and efficient Movie Recommendation System using a Two-Tower Embedding (TTE) architecture inspired by Uber’s ML platform. It encodes user preferences and movie metadata into dense vector embeddings, enabling fast and personalized recommendations through Approximate Nearest Neighbor (ANN) search.
 
 Movies have a unique way of resonating with people across different cultures and backgrounds, yet our tastes in films are highly individualistic. Whether we lean towards genres like thrillers, romance, or sci-fi, or we have particular preferences for actors and directors, our movie choices are as diverse as we are. While it's difficult to pinpoint a single movie that appeals universally, data scientists use behavioral analysis to identify patterns in movie preferences across different groups.
 
@@ -12,23 +15,42 @@ The system relies on a dataset containing information about movies, including ti
 
 To ensure smooth functioning of the recommendation system, handled missing values and prepared the dataset for user queries. For instance, I replaced NaN values in the genre column with empty strings to avoid errors during filtering.
 
-**3. Building the User Interface
+🚀 Features
+Built using a Two-Tower Neural Network: separate towers for users and movies.
 
-The core of our application is the Tkinter GUI, which includes several key components:
+Utilizes cosine similarity for matching user and movie embeddings.
 
-Search Box: Allows users to enter a movie title to search for.
-Genre Dropdown: Provides a list of genres for filtering results.
-Search Button: Initiates the search based on user input.
-Movie Listbox: Displays the list of movies matching the search criteria.
-Movie Details: Shows detailed information about the selected movie.
-Recommendation Listbox: Suggests similar movies based on the selected movie's genre.
-**4. Search and Filter Functionality
+Trained with in-batch negatives, logQ correction, and layer sharing to enhance embedding quality and model performance.
 
-When a user searches for a movie by title or selects a genre, the system filters the dataset to show relevant results. It then updates the movie listbox to display the titles of the matching movies. Users can click on any movie to see more details.
+Supports evaluation using Recall@k to measure recommendation effectiveness.
 
-**5. Recommendation Engine
+Designed for scalability across large user and item datasets.
 
-Once a movie is selected, the system calculates genre-based recommendations. It identifies movies with similar genres and sorts them by rating to provide top recommendations. These recommendations are then displayed in a separate listbox.
-The recommendation engine uses cosine similarity to calculate the similarity between user genere movie and all the movies in the dataset. The top most similar movies are recommended to the user.
+🧠 Machine Learning Techniques Used
+Collaborative Filtering for learning user-item interaction patterns.
 
-This movie recommendation system combines the power of Python's data manipulation capabilities with an intuitive graphical interface. By leveraging Tkinter for the GUI and Pandas for data processing, users can effortlessly search for movies, view detailed information, and receive personalized recommendations. This project is a great example of how technology can enhance our movie-watching experience by providing tailored suggestions based on our preferences.
+Two-Tower Deep Learning Architecture for encoding user and item features independently.
+
+Cosine Similarity for efficient matching of embedding vectors.
+
+In-Batch Negatives Sampling to reduce training cost while improving generalization.
+
+LogQ Correction to adjust popularity bias in training.
+
+Layer Sharing between towers to reduce model size and improve embedding consistency.
+
+Recall@k for model evaluation and ranking effectiveness.
+
+🛠️ Tech Stack & Tools
+Python
+
+NumPy, Pandas
+
+Scikit-learn
+
+Deep Learning Framework (e.g., PyTorch or TensorFlow)
+
+ANN libraries (e.g., FAISS or ScaNN for retrieval)
+
+📈 Evaluation Metrics
+Recall@k – Evaluates how many relevant movies are retrieved in the top-k results.
